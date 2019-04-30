@@ -1,6 +1,8 @@
 {
   "name": "bookApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "fed84fb9"
 }

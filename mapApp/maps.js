@@ -1,8 +1,26 @@
 var map, infoWindow
 
 var initialPos = {
-    lat:-30.0,
-    lng: 40.0
+    lat:-30,
+    lng: 40
+}
+function updateLocations(){
+    var arrayLength=locationsDataArray.length;
+    var pos;
+    for(var i =  0; i<arrayLength; i++){
+        var latData = locationsDataArray[i].latitude;
+        var lngData = locationsDataArray[i].longitude;
+        var title = locationsDataArray[i].title;
+        var content = locationsDataArray[i].content;
+        var available = locationsDataArray[i].available;
+        pos={
+          lat: latData,
+          lng: lngData
+        }
+        addMarker(map, locationsDataArray[i]);
+    }
+    map.setCenter(pos);
+    map.setZoom(4);
 }
 function initMap(){
     map = new google.maps.Map(document.getElementById('map'),{
@@ -13,19 +31,10 @@ function initMap(){
     infoWindow = new google.maps.InfoWindow;
     updateLocations();
 }
-function updateLocations(){
-    var arrayLength=locationsDataArray.length;
-    var pos;
-    for(var i =  0; i<arrayLength; i++){
-        addMarker(map, locationsDataArray[i]);
-        map.setCenter(pos);
-        map.setZoom(4);
-    }
-    
-}
+
 function addMarker(map, location){
     //location is an object with position, text, and pictures
-    var pos = {
+    pos = {
         lat: location.latitude,
         lng: location.longitude
     }
@@ -37,7 +46,7 @@ map:map
     '<h3>' + location.title + '</h3>'+
     '<div class="info-content">'+
     '<img src=' + location.picture + 'alt = "picture" style="width:30px; height 30px; padding: 20px, 20px, 20px, 20px;">' +
-    '<p>' +location.content + '</p>' +
+    '<p>' +location.content + '</p>' + '<p>' + location.available + '</p>' +
     '</div>' +
     '</div>';
 
@@ -59,6 +68,7 @@ function loadViewPage(location){
     localStorage.setItem("currentLocTitle", location.title);
     localStorage.setItem("currentLocContent",location.content);
     localStorage.setItem("currentLocPicture", location.picture);
+    localStorage.setItem("currentLocAvailable", location.available);
 
     window.location = "info.html";
 }
