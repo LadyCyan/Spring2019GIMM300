@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
   { path: 'list', loadChildren: './pages/list/list.module#ListPageModule' },
   { path: 'add', loadChildren: './pages/add/add.module#AddPageModule' },
-  { path: 'book-page', loadChildren: './book-page/book-page.module#BookPagePageModule' },
+  { path: 'book-list', loadChildren: './pages/book-list/book-list.module#BookListPageModule' },
+  { path: 'book-add', loadChildren: './pages/book-add/book-add.module#BookAddPageModule' },
 ];
 
 @NgModule({

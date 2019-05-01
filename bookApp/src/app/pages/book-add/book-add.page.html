@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>bookAdd</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      Book you have:
+      </ion-label>
+      <ion-input [(ngModel)]="book.title" placeholder ="title..."></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          Discord/Contact Info:
+          </ion-label>
+          <ion-input [(ngModel)]="book.content" placeholder ="content..."></ion-input>
+          </ion-item>
+
+          <ion-card>
+            <ion-card-content>
+              Available
+              <ion-input [(ngModel)]="book.available"></ion-input>
+              </ion-card-content>
+              </ion-card>
+
+          <ion-card>
+            <ion-button size ="large"(click)="openCamera2()">Take Picture of Book for Condition</ion-button>
+            <ion-card-content>
+              Picture:
+              <img [src] = "base64Image2" *ngIf="base64Image2"/>
+              </ion-card-content>
+                </ion-card>
+
+                <ion-button size="large" (click)="addBook(book)" routerLink="/book-list"
+                routerDirection = "forward">Add Location and Content</ion-button>
+</ion-content>

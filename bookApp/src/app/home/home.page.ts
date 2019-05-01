@@ -66,12 +66,11 @@ this.firebaseService.getLocationsList().valueChanges().subscribe(res =>{
     this.addInfoWindow(marker, location);
   }
   assignLocation(loc:Location){
-    loc.available = 'avail';
     this.firebaseService.setCurrentLocation(loc);
     this.currentLoc=loc;
     this.locationKey = loc.key;
     this.locationTitle = loc.title;
-    console.log("Assigned location available: "+ loc.available);
+    console.log("Assigned location available: ")
   }
   addInfoWindow(marker, location){
     let contentString = '<div class="info-window" id = "clickableItem">'+

@@ -18,8 +18,7 @@ this.location = this.firebaseService.getCurrentLocation();
   }
 
   ngOnInit() {
-    console.log("GotWWWWWWWWWWWWWWWWWWWWW: ");
-    //this.base64Image = this.location.picture;
+    this.base64Image = this.location.picture;
   }
 
   editLocation(location: Location){
