@@ -12,7 +12,6 @@ function updateLocations(){
         var lngData = locationsDataArray[i].longitude;
         var title = locationsDataArray[i].title;
         var content = locationsDataArray[i].content;
-        var available = locationsDataArray[i].available;
         pos={
           lat: latData,
           lng: lngData
@@ -68,7 +67,6 @@ function loadViewPage(location){
     localStorage.setItem("currentLocTitle", location.title);
     localStorage.setItem("currentLocContent",location.content);
     localStorage.setItem("currentLocPicture", location.picture);
-    localStorage.setItem("currentLocAvailable", location.available);
 
     window.location = "info.html";
 }

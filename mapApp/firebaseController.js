@@ -5,13 +5,12 @@ locationsRef.on('value', function(snapshot){
     snapshotToArray(snapshot);
     updateLocations();
 });
-function writeUserLocationData(userTitle, userInfo, userAvailable, lat, lon){
+function writeUserLocationData(userTitle, userInfo, lat, lon){
   firebase.database().ref('locationData/' + userTitle).set({
     title: userTitle,
     content:userInfo,
     latitude: lat,
-    longitude:lon,
-    available: userAvailable
+    longitude:lon
 
   });
 }
