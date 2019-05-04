@@ -4,17 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-button fixed size="large" routerLink="/book-base" routerDirection ="foward">
+  <div text-center>
+  <ion-button expand ="block" size="large" routerLink="/book-base" routerDirection ="foward">
     Browse Available Books
     </ion-button>
-<ion-button fixed size="large" (click)="loadMapPage()" routerLink="../home" routerDirection ="foward">
+<ion-button expand ="block" size="large" (click)="loadMapPage()" routerLink="../home" routerDirection ="foward">
   Go to Map to Find Meet-Up
   </ion-button>
-  <ion-button fixed size="medium" routerLink="/add" routerDirection ="foward">
+  <ion-button expand ="block" size="large" routerLink="/add" routerDirection ="foward">
     Add Location for Meet-Up and Exchange
     </ion-button>
-    <ion-button fixed size="medium" routerLink="/book-add" routerDirection ="foward">
+    <ion-button expand ="block" size="large" routerLink="/book-add" routerDirection ="foward">
       Add New Listing to the Available Books
       </ion-button>
+      </div>
 </ion-content>

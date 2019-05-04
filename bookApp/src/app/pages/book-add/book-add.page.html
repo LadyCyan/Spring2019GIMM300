@@ -19,6 +19,7 @@
           <ion-input [(ngModel)]="book.content" placeholder ="content..."></ion-input>
           </ion-item>
 
+<div text-center>
           <ion-card>
             <ion-card-content>
               Available
@@ -27,7 +28,7 @@
               </ion-card>
 
           <ion-card>
-            <ion-button fixed size ="large"(click)="openCamera2()">Take Picture of Book for Condition</ion-button>
+            <ion-button fixed size ="medium"(click)="openCamera2()">Take Picture of Book for Condition</ion-button>
             <ion-card-content>
               Picture:
               <img [src] = "base64Image2" *ngIf="base64Image2"/>
@@ -36,4 +37,5 @@
 
                 <ion-button fixed size="large" (click)="addBook(book)" routerLink="/book-base"
                 routerDirection = "forward">Add Book Content</ion-button>
+                </div>
 </ion-content>
