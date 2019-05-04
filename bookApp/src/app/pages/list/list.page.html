@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content>
- <ion-button (click)= "editLocation(location)" routerLink="../home" routerDirection="forward">Save Changes to Listing</ion-button>
- <ion-button block clear (click)="deleteLocation(location)" routerLink = "../home">Delete Listing</ion-button>
+ <ion-button fixed (click)= "editLocation(location)" routerLink="../home" routerDirection="forward">Save Changes to Listing</ion-button>
+ <ion-button fixed block clear (click)="deleteLocation(location)" routerLink = "../home">Delete Listing</ion-button>
 
 
   <ion-item>
@@ -33,7 +33,7 @@
               </ion-item> -->
 
           <ion-card>
-            <ion-button expand=block clear (click)="openCamera()">Take Picture</ion-button>
+            <ion-button fixed expand=block clear (click)="openCamera()">Take Picture</ion-button>
             <ion-card-content>
               Picture:
               <img [src] = "base64Image" *ngIf="base64Image"/>

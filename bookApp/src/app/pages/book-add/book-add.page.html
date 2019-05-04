@@ -27,13 +27,13 @@
               </ion-card>
 
           <ion-card>
-            <ion-button size ="large"(click)="openCamera2()">Take Picture of Book for Condition</ion-button>
+            <ion-button fixed size ="large"(click)="openCamera2()">Take Picture of Book for Condition</ion-button>
             <ion-card-content>
               Picture:
               <img [src] = "base64Image2" *ngIf="base64Image2"/>
               </ion-card-content>
                 </ion-card>
 
-                <ion-button size="large" (click)="addBook(book)" routerLink="/book-base"
+                <ion-button fixed size="large" (click)="addBook(book)" routerLink="/book-base"
                 routerDirection = "forward">Add Book Content</ion-button>
 </ion-content>

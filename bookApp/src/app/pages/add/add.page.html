@@ -30,14 +30,14 @@
               </ion-card> -->
 
           <ion-card>
-            <ion-button size ="large"(click)="openCamera()">Take Picture of Book for Condition</ion-button>
+            <ion-button fixed size ="large"(click)="openCamera()">Take Picture of Book for Condition</ion-button>
             <ion-card-content>
               Picture:
               <img [src] = "base64Image" *ngIf="base64Image"/>
               </ion-card-content>
                 </ion-card>
 
-                <ion-button size="large" (click)="addLocation(location)" routerLink="../home"
+                <ion-button fixed size="large" (click)="addLocation(location)" routerLink="../home"
                 routerDirection = "forward">Add Location and Content</ion-button>
 
 </ion-content>
