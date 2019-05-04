@@ -25,7 +25,7 @@ this.location = this.firebaseService.getCurrentLocation();
     this.firebaseService.editLocation(location);
   }
   deleteLocation(location:Location){
-    this.firebaseService.deleteLocation(location)
+    this.firebaseService.deleteLocation(location);
   }
 openCamera(){
   const options: CameraOptions={

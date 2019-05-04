@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'add', loadChildren: './pages/add/add.module#AddPageModule' },
   { path: 'book-list', loadChildren: './pages/book-list/book-list.module#BookListPageModule' },
   { path: 'book-add', loadChildren: './pages/book-add/book-add.module#BookAddPageModule' },
+  { path: 'book-base', loadChildren: './book-base/book-base.module#BookBasePageModule' },
 ];
 
 @NgModule({

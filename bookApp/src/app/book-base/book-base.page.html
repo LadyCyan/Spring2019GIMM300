@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home Page for Book Listing</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="pages/login"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-list-header>
+    Book Listings:
+</ion-list-header>
+    <ion-item
+      *ngFor="let book of booksList$ | async"
+        (click)="assignBook(book)"
+          routerLink="/book-list" routerDirection = "forward">
+            {{book.title}}
+    </ion-item>
+  </ion-list>
+</ion-content>

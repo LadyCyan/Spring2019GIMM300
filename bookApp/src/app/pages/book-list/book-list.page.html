@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>bookList</ion-title>
+    <ion-title>Book Listing</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="../home"></ion-back-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+ <ion-button (click)= "editBook(book)" routerLink="/book-list" routerDirection="forward">Save Changes to Listing</ion-button>
+ <ion-button block clear (click)="deleteBook(book)" routerLink = "/book-list">Delete Listing</ion-button>
+
+
+  <ion-item>
+    <ion-label>
+    Book Available:
+      </ion-label>
+      <ion-input [(ngModel)]="book.title" placeholder ="title..."></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          Discord Contact:
+          </ion-label>
+          <ion-input [(ngModel)]="book.content" placeholder ="content..."></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              Is this book still available?
+              </ion-label>
+              <ion-input [(ngModel)]="book.available" placeholder =""></ion-input>
+              </ion-item>
+
+          <ion-card>
+            <ion-button expand=block clear (click)="openCamera2()">Take Picture</ion-button>
+            <ion-card-content>
+              Picture:
+              <img [src] = "base64Image2" *ngIf="base64Image2"/>
+              </ion-card-content>
+                </ion-card>
 
 </ion-content>

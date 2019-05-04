@@ -11,18 +11,21 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class BookListPage implements OnInit {
   public book: Book;
+  public BookKey:string;
   public base64Image2: string;
 
-  constructor(private activatedRoute: ActivatedRoute, public firebaseService: FirebaseService, private camera: Camera) { }
+  constructor(private activatedRoute: ActivatedRoute, public firebaseService: FirebaseService, private camera: Camera) {
+this.book = this.firebaseService.getCurrentBook();
+  }
 
   ngOnInit() {
     this.base64Image2 = this.book.picture;
   }
   editBook(book: Book){
-    this.firebaseService.editBook(book)
+    this.firebaseService.editBook(book);
   }
   deleteBook(book: Book){
-    this.firebaseService.deleteBook(book)
+    this.firebaseService.deleteBook(book);
   }
   openCamera2(){
     const options: CameraOptions={
